@@ -1,6 +1,6 @@
 async function bubbleview({img, width, height}) {
   // console.log('test');
-  let base = d3.select('#image');
+  let base = d3.select('#container');
 
   let all_data = await d3.csv('./../data/vcd-bubbleview.csv');
   // console.log(all_data[0]);
