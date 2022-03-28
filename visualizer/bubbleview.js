@@ -1,9 +1,9 @@
 async function bubbleview({img, width, height}) {
-  console.log('test');
+  // console.log('test');
   let base = d3.select('#image');
 
   let all_data = await d3.csv('./../data/vcd-bubbleview.csv');
-  console.log(all_data[0]);
+  // console.log(all_data[0]);
 
   let xAccessor = d => +d.x;
   let yAccessor = d => +d.y;
@@ -12,8 +12,8 @@ async function bubbleview({img, width, height}) {
   // 1. filter data by image
   let data = all_data
     .filter(d => imgAccessor(d) == `${img}.jpeg`)
-    .filter(d => d.x != 'N/A');
-  console.log(data);
+    .filter(d => d.x != 'N/A')
+    .filter(d => d.participant == 'g');
 
   // 2. load image
   const container = base
@@ -33,8 +33,8 @@ async function bubbleview({img, width, height}) {
   let xScale = d3.scaleLinear().domain([0, width]).range([0, width]);
   let yScale = d3.scaleLinear().domain([0, height]).range([0, height]);
   let color = d3
-    .scaleOrdinal()
-    .domain(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'])
+    .scaleLinear()
+    .domain([0, data.length])
     .range([
       '#00429d',
       '#3761ab',
@@ -51,9 +51,6 @@ async function bubbleview({img, width, height}) {
       '#93003a',
     ]);
 
-  let a = data[0];
-  console.log(data.map(d => d.participant));
-
   // 4. draw dots on image
   let dots = container
     .selectAll('dot')
@@ -63,8 +60,31 @@ async function bubbleview({img, width, height}) {
     .attr('cx', d => xScale(xAccessor(d)))
     .attr('cy', d => yScale(yAccessor(d)))
     .attr('r', d => 50)
-    .attr('opacity', 0.8)
-    .attr('fill', d => color(d.participant));
+    .attr('opacity', 0.1)
+    .attr('fill', '#ffffff')
+    .attr('id', (d, i) => `circle_${i}`);
 
+  // 5. create line
+  const lineGenerator = d3
+    .line()
+    .x(d => xScale(xAccessor(d)))
+    .y(d => yScale(yAccessor(d)));
+
+  container
+    .selectAll('.path')
+    .data(data)
+    .enter()
+    .append('path')
+    .attr('fill', 'none')
+    .attr('stroke-width', 1.25)
+    .attr('stroke', '#f9423a')
+    .attr('d', d => lineGenerator(data));
+
+  // 6. change first and last circle
+
+  d3.select('#circle_1').attr('opacity', 0.5).attr('fill', '#00429d');
+  d3.select(`#circle_${data.length - 1}`)
+    .attr('opacity', 0.5)
+    .attr('fill', '#93003a');
   // do not erase after this
 }
