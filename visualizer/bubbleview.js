@@ -77,14 +77,14 @@ async function bubbleview({img, width, height}) {
     .append('path')
     .attr('fill', 'none')
     .attr('stroke-width', 1.25)
-    .attr('stroke', '#f9423a')
+    .attr('stroke', '#00fffff')
     .attr('d', d => lineGenerator(data));
 
   // 6. change first and last circle
 
-  d3.select('#circle_1').attr('opacity', 0.5).attr('fill', '#00429d');
+  d3.select('#circle_1').attr('opacity', 0.5).attr('fill', 'green');
   d3.select(`#circle_${data.length - 1}`)
     .attr('opacity', 0.5)
-    .attr('fill', '#93003a');
+    .attr('fill', 'purple');
   // do not erase after this
 }

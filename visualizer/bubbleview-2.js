@@ -45,7 +45,7 @@ async function bubbleview({img, width, height}) {
         .attr('y', 0)
         .attr('width', width)
         .attr('height', height)
-        .attr('fill', '#666')
+        .attr('fill', '#fff')
         .attr('opacity', 0.5);
 
       // x, y Scale
@@ -62,7 +62,7 @@ async function bubbleview({img, width, height}) {
         .attr('cx', d => xScale(xAccessor(d)))
         .attr('cy', d => yScale(yAccessor(d)))
         .attr('r', d => 50)
-        .attr('opacity', 0.1)
+        .attr('opacity', 0)
         .attr('fill', '#00ffff')
         .attr('id', (d, i) => `circle_${i}`);
 
@@ -79,20 +79,18 @@ async function bubbleview({img, width, height}) {
         .append('path')
         .attr('id', `#path_${participant}`)
         .attr('fill', 'none')
-        .attr('stroke-width', 1.25)
-        .attr('stroke', '#f9423a')
+        .attr('stroke-width', 5)
+        .attr('stroke', '#00ffff')
+        .attr('stroke-opacity', 0.3)
         .attr('d', d => lineGenerator(participant_data));
 
       // 6. change first and last circle
 
-      container
-        .select('#circle_1')
-        .attr('opacity', 0.5)
-        .attr('fill', '#ff7b00');
+      container.select('#circle_1').attr('opacity', 0.5).attr('fill', 'green');
       container
         .select(`#circle_${participant_data.length - 1}`)
         .attr('opacity', 0.5)
-        .attr('fill', '#171717');
+        .attr('fill', 'purple');
 
       // do not add after this
     }
