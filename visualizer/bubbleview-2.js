@@ -16,7 +16,7 @@ async function bubbleview({img, width, height}) {
 
   // for each participant, create an svg with the width and height and image.
 
-  ['m'].forEach(participant => {
+  ['a'].forEach(participant => {
     // filter data
     let participant_data = data.filter(d => d.participant == `${participant}`);
 
