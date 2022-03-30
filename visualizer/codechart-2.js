@@ -2,12 +2,13 @@ async function codechart({img, width, height}) {
   console.log('test');
   let base = d3.select('#container');
 
-  let all_data = await d3.csv('./../data/vcd-codecharts.csv');
+  let all_data = await d3.csv('./../data/vcd-codecharts+bubbleview.csv');
   console.log(all_data[0]);
 
   let xAccessor = d => +d.x;
   let yAccessor = d => +d.y;
   let imgAccessor = d => d.image;
+  let testAccessor = d => d.test;
 
   // 1. filter data by image
   let data = all_data
@@ -29,10 +30,22 @@ async function codechart({img, width, height}) {
     .attr('width', width)
     .attr('height', height);
 
+  container
+    .append('rect')
+    .attr('x', 0)
+    .attr('y', 0)
+    .attr('width', width)
+    .attr('height', height)
+    .attr('fill', '#fff')
+    .attr('opacity', 0.5);
+
   // 3. create x and y scales
   let xScale = d3.scaleLinear().domain([0, width]).range([0, width]);
   let yScale = d3.scaleLinear().domain([0, height]).range([0, height]);
-
+  let color = d3
+    .scaleOrdinal()
+    .domain(['bubbleview', 'codecharts'])
+    .range(['green', 'yellow']);
   // 4. draw dots on image
   let dots = container
     .selectAll('dot')
@@ -42,8 +55,8 @@ async function codechart({img, width, height}) {
     .attr('cx', d => xScale(xAccessor(d)))
     .attr('cy', d => yScale(yAccessor(d)))
     .attr('r', 10)
-    .attr('opacity', 0.7)
-    .attr('fill', '#ffffff');
+    .attr('opacity', 0.75)
+    .attr('fill', d => color(testAccessor(d)));
 
   // do not erase after this
 }
