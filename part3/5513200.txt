@@ -1,0 +1,4 @@
+This sketch is partly inspired by our recent weather and by Lieberman’s iterative coding process. I wanted to create something engaging and calm that could keep the viewer’s attention. Based on my analysis and evaluation, I realized I can do this by keeping a steady rhythm and providing different details to focus on.
+Randomness plays a big role in the sketch: the position, HSB color values, and the size of the drops are all randomly generated. Each drop grows and fades out, mixing with other drops to create interesting color combinations like in Lieberman’s image. 
+
+https://editor.p5js.org/lennymd/full/Kd_uz2rez
