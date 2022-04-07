@@ -1,12 +1,12 @@
 Introduction
 
-Looking at my selection, Zach Lieberman’s piece appears out of place. It’s made using code, a medium different from the others, and works with a broader spectrum of colors. Furthermore, it appears to lack focus; I don’t know where to start or how to move through the image. To contrast my initial analysis that covered the light, color, and composition of the images, I chose to focus on better understanding how viewers move through the artworks.
+Looking at my selection, Zach Lieberman’s piece appears misplaced. It’s made using code, a different medium from the others, and works with a broader spectrum of colors. Furthermore, it appears to lack focus; I don’t know where to start or how to move through the image. To contrast my initial analysis that covered the light, color, and composition of the images, I chose to focus on better understanding how viewers move through the artworks.
 
 Method
 
 I chose to work with the BubbleView and CodeChart paradigms. I chose the BubbleView paradigm because it would allow me to see how a participant explored an artwork: every click would be recorded and used to visualize the path of their explorations. On the other hand, the CodeChart paradigm allows me to see the quick-reaction to the images. I tested both paradigms with twelve participants who were non-DfI students. The images were in the same order both times.
 
-I hypothesize that viewers will be drawn to the brightest areas in the images, like the lily in Bellini’s portrait, or the red “stain” in Dufy’s image. For Lieberman’s work, I expect to not find a pattern. For Cambiaso’s sketch, the chaos may distract the participant, but I think explorations and attention will begin and travel around the elliptical composition I had mentioned in my analysis.
+I hypothesize that viewers will be drawn to the brightest areas in the images, like the lily in Bellini’s portrait, or the red “stain” in Dufy’s image. For Lieberman’s work, I expect not to find a pattern. For Cambiaso’s sketch, the chaos may distract the participant, but I think explorations and attention will begin and travel around the elliptical composition I had mentioned in my analysis.
 
 Results
 
@@ -16,8 +16,9 @@ In figure 2, we see the results of the CodeChart paradigm compared to the initia
 
 Discussion
 
-In the end, none of my hypotheses panned out. One limitation of the setup was that participants saw both paradigms back to back with images in the same order. When doing the CodeChart paradigm, what they remember from the BubbleView likely influenced what they focused on. I could have addressed this by using a different order or interjecting a third test with unrelated images in between.
+Overall, none of my hypotheses panned out. One limitation of the setup was that participants saw both paradigms back to back with images in the same order. When doing the CodeChart paradigm, what they remember from the BubbleView likely influenced what they focused on. I could have addressed this by using a different order or interjecting a third test with unrelated images in between.
 
-Looking at the BubbleView explorations, I imagine Lieberman’s image was least explored because aside from the light cones, the rest of the image is not sharp. The BubbleView uses a blurry filter that did nothing for this image. From this paradigm I also gathered that an image that had more details or varying features prompted more exploration. Indeed, while Lieberman’s pictures are generally in the lower left side of the figure, the other images are more spread out over the rest of the plot.
+Looking at the BubbleView explorations, I imagine Lieberman’s image was least explored because aside from the light cones, the rest of the image is not sharp. The BubbleView uses a blurry filter that did nothing for this image. From this paradigm, I also gathered that an image that had more details or varying features prompted more exploration. Indeed, while Lieberman’s pictures are generally in the lower-left side of the figure, the other images are more spread out over the rest of the plot.
 
 Looking at the CodeChart comparison, the discrepancy in foci is likely due to the different natures of the paradigms. CodeChart tests quick perception, while BubbleView allows for an extended exploration.
+
